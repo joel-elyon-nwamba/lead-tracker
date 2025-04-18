@@ -1,4 +1,4 @@
-let leadTracker = ["https://www.youtube.com/", "https://www.google.com/", "https://www.reddit.com/"];
+let  leadTracker = [];
 const inputEl = document.getElementById("input-el");
 const saveBtn = document.getElementById("save-btn");
 const deleteBtn = document.getElementById("delete-btn");
@@ -15,6 +15,7 @@ saveBtn.addEventListener("click", () => {
 // Loop through leadtracker 
 
 const render = () => {
+    ulEl.innerHTML = "";
     for(let i = 0; i < leadTracker.length; i++) {
         // Create a list item for each link
         const li = document.createElement("li");
