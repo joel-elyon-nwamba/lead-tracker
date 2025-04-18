@@ -11,6 +11,12 @@ saveBtn.addEventListener("click", () => {
     console.log(leadTracker);
     render();
 })
+
+// Delte option to remove all the list 
+deleteBtn.addEventListener("click", () => {
+    leadTracker = [];
+    render();
+})
 // First we need to be able to input our information for it to display in an array of list 
 // Loop through leadtracker 
 
@@ -24,3 +30,4 @@ const render = () => {
         ulEl.appendChild(li);
     }
 }
+
