@@ -9,8 +9,12 @@ saveBtn.addEventListener("click", () => {
     leadTracker.push(inputEl.value);
     inputEl.value = "";
     console.log(leadTracker);
+    console.log(localStorage.getItem("leadTracker"));
     render();
+
 })
+
+console.log(localStorage.getItem("leadTracker", JSON.stringify(leadTracker)));
 
 // Delte option to remove all the list 
 deleteBtn.addEventListener("click", () => {
