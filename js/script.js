@@ -1,5 +1,4 @@
 let  leadTracker = [];
-console.log(localStorage.setItem("leadTracker", JSON.stringify(leadTracker)));
 const inputEl = document.getElementById("input-el");
 const saveBtn = document.getElementById("save-btn");
 const deleteBtn = document.getElementById("delete-btn");
@@ -14,7 +13,14 @@ saveBtn.addEventListener("click", () => {
 
 })
 
-console.log(localStorage.getItem("leadTracker", JSON.stringify(leadTracker)));
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("leadTracker"));
+if(leadsFromLocalStorage) {
+    leadTracker = leadsFromLocalStorage;
+    // render();
+}
+
+
+console.log(leadsFromLocalStorage);
 
 // Delte option to remove all the list 
 deleteBtn.addEventListener("click", () => {
