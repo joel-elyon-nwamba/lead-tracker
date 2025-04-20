@@ -1,4 +1,5 @@
 let  leadTracker = [];
+console.log(localStorage.setItem("leadTracker", JSON.stringify(leadTracker)));
 const inputEl = document.getElementById("input-el");
 const saveBtn = document.getElementById("save-btn");
 const deleteBtn = document.getElementById("delete-btn");
@@ -8,8 +9,7 @@ const ulEl = document.getElementById("ul-el");
 saveBtn.addEventListener("click", () => {
     leadTracker.push(inputEl.value);
     inputEl.value = "";
-    console.log(leadTracker);
-    console.log(localStorage.getItem("leadTracker"));
+    localStorage.setItem("leadTracker", JSON.stringify(leadTracker));
     render();
 
 })
