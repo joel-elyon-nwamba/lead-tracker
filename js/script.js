@@ -25,18 +25,18 @@ console.log(leadsFromLocalStorage);
 // Delte option to remove all the list 
 deleteBtn.addEventListener("click", () => {
     leadTracker = [];
-    render();
+    render(tracker);
 })
 // First we need to be able to input our information for it to display in an array of list 
 // Loop through leadtracker 
 
-const render = () => {
+const render = (tracker) => {
     ulEl.innerHTML = "";
-    for(let i = 0; i < leadTracker.length; i++) {
+    for(let i = 0; i < tracker.length; i++) {
         // Create a list item for each link
         const li = document.createElement("li");
         li.classList.add("list-items");
-        li.textContent += leadTracker[i];
+        li.textContent += tracker[i];
         ulEl.appendChild(li);
     }
 }
