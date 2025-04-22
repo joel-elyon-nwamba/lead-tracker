@@ -19,6 +19,15 @@ if(leadsFromLocalStorage) {
     // render();
 }
 
+// Have the tab button function 
+
+tabBtn.addEventListener("click", () => {
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+        leadTracker.push(tabs[0].url);
+        localStorage.setItem("leadTracker", JSON.stringify(leadTracker));
+        render(leadTracker);
+    })
+})
 
 console.log(leadsFromLocalStorage);
 
