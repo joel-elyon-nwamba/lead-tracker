@@ -9,7 +9,7 @@ saveBtn.addEventListener("click", () => {
     leadTracker.push(inputEl.value);
     inputEl.value = "";
     localStorage.setItem("leadTracker", JSON.stringify(leadTracker));
-    render();
+    render(leadTracker);
 
 })
 
@@ -25,7 +25,7 @@ console.log(leadsFromLocalStorage);
 // Delte option to remove all the list 
 deleteBtn.addEventListener("click", () => {
     leadTracker = [];
-    render(tracker);
+    render(leadTracker);
 })
 // First we need to be able to input our information for it to display in an array of list 
 // Loop through leadtracker 
